@@ -10,10 +10,8 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -34,11 +32,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.study.android.notesapp.domain.Note
-import com.study.android.notesapp.presentation.ui.theme.Green
-import com.study.android.notesapp.presentation.ui.theme.Grey200
 import com.study.android.notesapp.presentation.ui.theme.OtherNotesColors
 import com.study.android.notesapp.presentation.ui.theme.PinnedNotesColors
-import com.study.android.notesapp.presentation.ui.theme.Yellow200
+import com.study.android.notesapp.presentation.utils.DateFormatter
 
 @Composable
 fun NotesScreen(
@@ -251,7 +247,7 @@ fun NoteCard(
             color = MaterialTheme.colorScheme.onSurface
         )
         Text(
-            text = note.updatedAt.toString(),
+            text = DateFormatter.formatDateToString(note.updatedAt),
             fontSize = 12.sp,
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
